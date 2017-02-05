@@ -8,8 +8,8 @@ android {
         applicationId "com.menu.advance"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 1002
-        versionName "1.02(Beta)"
+        versionCode 1003
+        versionName "1.03(Beta)"
     }
     buildTypes {
         release {
@@ -20,6 +20,5 @@ android {
 }
 
 dependencies {
-	compile 'com.android.support:appcompat-v7:+'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
