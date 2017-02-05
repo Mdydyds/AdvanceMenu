@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">高级菜单</string>
+    <string name="reboot_s">重启</string>
+	<string name="reboot_r">恢复模式</string>
+	<string name="reboot_b">启动加载器</string>
+	<string name="power_off">关机</string>
+	<string name="reboot_u">重启用户界面</string>
+	<string name="reboot_rst">软重启</string>
+    <string name="reboot_h">热重启</string>
+	<string name="reboot_ms">安全模式</string>
+	<string name="reboot_off">锁屏</string>
+	<string name="help_t">帮助</string>
+	<string name="help_c1">此应用必须在busybox和root环境下运行。</string>
+	<string name="help_c2">如果你还未安卓busybox，你不得不安装。</string>
+	<string name="help_c3">对于MIUI用户，你应该安装完整版busybox。</string>
+</resources>

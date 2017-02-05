@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.Dialog">
+		<item name="android:backgroundDimEnabled">false</item>
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowNoTitle">true</item>
+		
+	</style>
+	<style name="AppThemeO" parent="@android:style/Theme.Material.Light.Dialog">
+		<item name="android:backgroundDimEnabled">false</item><!--activity不变暗-->
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowNoTitle">false</item>
+	</style>
+</resources>

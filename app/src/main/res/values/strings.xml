@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AdvanceMenu</string>
+    <string name="reboot_s">Reboot</string>
+	<string name="reboot_r">Recovery</string>
+	<string name="reboot_b">Bootloader</string>
+	<string name="power_off">Shutdown</string>
+	<string name="reboot_u">Restart SystemUI</string>
+	<string name="reboot_rst">Soft Reboot</string>
+    <string name="reboot_h">Hot Reboot</string>
+	<string name="reboot_ms">Safe Mode</string>
+	<string name="reboot_off">Lock Screen</string>
+	<string name="help_t">Help</string>
+	<string name="help_c1">The application must be run with busybox and root.</string>
+	<string name="help_c2">So if you havan\'t install busybox,you hava to install it.</string>
+	<string name="help_c3">For MIUI users you should install a full version\'s busybox.</string>
+</resources>
