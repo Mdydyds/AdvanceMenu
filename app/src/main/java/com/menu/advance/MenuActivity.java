@@ -1,20 +1,18 @@
 package com.menu.advance;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.ListView;
-import java.util.ArrayList;
 import android.view.View;
 import android.view.LayoutInflater;
-import android.app.AlertDialog;
-import android.widget.ArrayAdapter;
+import android.support.v7.app.AlertDialog;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView;
 import android.content.Intent;
-import android.view.ViewGroup;
+import android.content.Context;
 
-public class MenuActivity extends Activity 
+public class MenuActivity extends AppCompatActivity
 {
 	ListView lsmenu;
 	String[] items;
@@ -25,10 +23,12 @@ public class MenuActivity extends Activity
 	boolean[] bl;
 	Button b1;
 	Button b2;
+	Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+		setContentView(R.layout.aboot);
         instance=LayoutInflater.from(this).inflate(R.layout.menu,null);
 		ad=new AlertDialog.Builder(this).create();
 		ad.setTitle(R.string.app_name);
@@ -44,7 +44,8 @@ public class MenuActivity extends Activity
 					int before = findCheck(bl);
 					bl[before] = false;
 					bl[p3] = true;
-					ca.notifyDataSetChanged();
+					ca=new ChooseAdapter(context,items,bl);
+					lsmenu.setAdapter(ca);
 					nowplatform = p3;
 				}
 				
@@ -73,6 +74,7 @@ public class MenuActivity extends Activity
 		lsmenu=(ListView)instance.findViewById(R.id.menulist);
         b1=(Button) instance.findViewById(R.id.button1);
 		b2=(Button) instance.findViewById(R.id.button2);
+		context=MenuActivity.this;
 		items=new String[10];
 		items[0] = getString(R.string.power_off);
 		items[1] = getString(R.string.reboot_b);
@@ -85,7 +87,7 @@ public class MenuActivity extends Activity
 		items[8] = getString(R.string.reboot_off);
 		items[9] = getString(R.string.help_t);
 		bl = new boolean[]{true,false,false,false,false,false,false,false,false,false};
-		ca = new ChooseAdapter(this,items,bl);
+		ca = new ChooseAdapter(context,items,bl);
 		lsmenu.setAdapter(ca);
 	}
 	private void platform(int type)
@@ -114,15 +116,15 @@ public class MenuActivity extends Activity
 	@Override
 	protected void onDestroy()
 	{
-		System.gc();
 		super.onDestroy();
 	}
 	private void Aboot()
 	{
 		Intent it=new Intent();
-		it.setClass(MenuActivity.this,AbootActivity.class);
+		it.setClass(MenuActivity.this,AboutActivity.class);
 		startActivity(it);
 		it=null;
+		MenuActivity.this.finish();
 	}
 	private int findCheck(boolean[] z)
 	{
@@ -151,5 +153,6 @@ public class MenuActivity extends Activity
 		bl=null;
 		b1=null;
 		b2=null;
+		context=null;
 	}
 }

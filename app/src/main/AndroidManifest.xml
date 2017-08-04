@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 		<activity
-			android:name="com.menu.advance.AbootActivity"
+			android:name="com.menu.advance.AboutActivity"
 			android:label="@string/help_t"
 			android:launchMode="singleTask"
 			android:noHistory="true"

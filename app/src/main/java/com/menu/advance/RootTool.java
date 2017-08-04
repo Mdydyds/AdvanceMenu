@@ -15,16 +15,12 @@ public final class RootTool
 			localDataOutputStream.writeBytes("exit\n");
 			localDataOutputStream.flush();
 			localProcess.waitFor();
-			int length = localDataInputStream.available();         
-			byte [] buffer = new byte[length];        
-
-			localDataInputStream.read(buffer);            
 			localDataInputStream.close();
 			localDataOutputStream.close();
 			return localProcess.exitValue();
 		} catch (Exception localException) {
 			localException.printStackTrace();
-			return 1;
+			return -1;
 		}
 	}
 }
