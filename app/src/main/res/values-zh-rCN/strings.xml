@@ -12,7 +12,9 @@
 	<string name="reboot_ms">安全模式</string>
 	<string name="reboot_off">锁屏</string>
 	<string name="help_t">帮助</string>
-	<string name="help_c1">此应用必须在busybox和root环境下运行。</string>
-	<string name="help_c2">如果你还未安卓busybox，你不得不安装。</string>
-	<string name="help_c3">对于MIUI用户，你应该安装完整版busybox。</string>
+	<string name="help_c1">1.此应用必须在busybox和root环境下运行。\n</string>
+	<string name="help_c2">2.如果你还未安装busybox，你不得不安装。\n</string>
+	<string name="help_c3">3.对于MIUI用户，你应该安装完整版busybox。</string>
+	<string name="ok">确定</string>
+	<string name="cancel">取消</string>
 </resources>

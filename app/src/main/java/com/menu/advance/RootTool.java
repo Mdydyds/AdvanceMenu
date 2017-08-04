@@ -2,7 +2,6 @@ package com.menu.advance;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import org.apache.http.util.EncodingUtils;
 
 public final class RootTool
 {

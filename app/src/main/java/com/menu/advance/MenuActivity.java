@@ -2,6 +2,7 @@ package com.menu.advance;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ListView;
 import java.util.ArrayList;
 import android.view.View;
@@ -16,9 +17,14 @@ import android.view.ViewGroup;
 public class MenuActivity extends Activity 
 {
 	ListView lsmenu;
-	ArrayList<String> items;
+	String[] items;
 	View instance;
 	AlertDialog ad;
+	ChooseAdapter ca;
+	int nowplatform = 0;
+	boolean[] bl;
+	Button b1;
+	Button b2;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -27,7 +33,6 @@ public class MenuActivity extends Activity
 		ad=new AlertDialog.Builder(this).create();
 		ad.setTitle(R.string.app_name);
 		ad.setView(instance);
-		ad.setIcon(R.drawable.ic_launcher);
 		init();
 		ad.show();
 		lsmenu.setOnItemClickListener(new OnItemClickListener()
@@ -36,34 +41,52 @@ public class MenuActivity extends Activity
 				@Override
 				public void onItemClick(AdapterView<?> p1, View p2, int p3, long p4)
 				{
-					  platform(p3);
-					  ad.dismiss();
-					  ad=null;
-					  instance=null;
-					  lsmenu=null;
-					  items=null;
-					  MenuActivity.this.finish();
+					int before = findCheck(bl);
+					bl[before] = false;
+					bl[p3] = true;
+					ca.notifyDataSetChanged();
+					nowplatform = p3;
 				}
 				
 			
 		});
-		
+		b1.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				ad.dismiss();
+				recycle();
+				MenuActivity.this.finish();
+			}
+		});
+		b2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				platform(nowplatform);
+				ad.dismiss();
+				recycle();
+				MenuActivity.this.finish();
+			}
+		});
     }
 	private void init()
 	{
 		lsmenu=(ListView)instance.findViewById(R.id.menulist);
-		items=new ArrayList<String>();
-		items.add(getString(R.string.power_off));
-		items.add(getString(R.string.reboot_b));
-		items.add(getString(R.string.reboot_r));
-		items.add(getString(R.string.reboot_rst));
-		items.add(getString(R.string.reboot_s));
-		items.add(getString(R.string.reboot_u));
-		items.add(getString(R.string.reboot_h));
-		items.add(getString(R.string.reboot_ms));
-		items.add(getString(R.string.reboot_off));
-		items.add(getString(R.string.help_t));
-		lsmenu.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,items));
+        b1=(Button) instance.findViewById(R.id.button1);
+		b2=(Button) instance.findViewById(R.id.button2);
+		items=new String[10];
+		items[0] = getString(R.string.power_off);
+		items[1] = getString(R.string.reboot_b);
+		items[2] = getString(R.string.reboot_r);
+		items[3] = getString(R.string.reboot_rst);
+		items[4] = getString(R.string.reboot_s);
+		items[5] = getString(R.string.reboot_u);
+		items[6] = getString(R.string.reboot_h);
+		items[7] = getString(R.string.reboot_ms);
+		items[8] = getString(R.string.reboot_off);
+		items[9] = getString(R.string.help_t);
+		bl = new boolean[]{true,false,false,false,false,false,false,false,false,false};
+		ca = new ChooseAdapter(this,items,bl);
+		lsmenu.setAdapter(ca);
 	}
 	private void platform(int type)
 	{
@@ -101,5 +124,32 @@ public class MenuActivity extends Activity
 		startActivity(it);
 		it=null;
 	}
-	
+	private int findCheck(boolean[] z)
+	{
+		if (z!=null)
+		{
+			for (int i=0;i<=9;i++)
+			{
+				if (z[i]==true)
+				{
+					return  i;
+				}
+				else {
+					continue;
+				}
+			}
+		}
+		return -1;
+	}
+	private void recycle()
+	{
+		lsmenu=null;
+		items=null;
+		instance=null;
+		ad=null;ca=null;
+		nowplatform=0;
+		bl=null;
+		b1=null;
+		b2=null;
+	}
 }

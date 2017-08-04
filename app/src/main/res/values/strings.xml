@@ -12,7 +12,9 @@
 	<string name="reboot_ms">Safe Mode</string>
 	<string name="reboot_off">Lock Screen</string>
 	<string name="help_t">Help</string>
-	<string name="help_c1">The application must be run with busybox and root.</string>
-	<string name="help_c2">So if you havan\'t install busybox,you hava to install it.</string>
-	<string name="help_c3">For MIUI users you should install a full version\'s busybox.</string>
+	<string name="help_c1">1.The application must be run with busybox and root.\n</string>
+	<string name="help_c2">2.If you havan\'t install busybox,you hava to install it.\n</string>
+	<string name="help_c3">3.For MIUI users you should install a full version\'s busybox.</string>
+	<string name="ok">Confirm</string>
+	<string name="cancel">Cancel</string>
 </resources>
