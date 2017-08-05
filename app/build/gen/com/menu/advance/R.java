@@ -28,6 +28,7 @@ public final class R {
         public static final int help_c3=0x7f04000d;
         public static final int help_t=0x7f04000a;
         public static final int power_off=0x7f040004;
+        public static final int reboot_a=0x7f04000e;
         public static final int reboot_b=0x7f040003;
         public static final int reboot_h=0x7f040007;
         public static final int reboot_ms=0x7f040008;

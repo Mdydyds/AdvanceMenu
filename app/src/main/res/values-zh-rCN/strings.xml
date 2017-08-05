@@ -15,4 +15,5 @@
 	<string name="help_c1">此应用必须在busybox和root环境下运行。</string>
 	<string name="help_c2">如果你还未安卓busybox，你不得不安装。</string>
 	<string name="help_c3">对于MIUI用户，你应该安装完整版busybox。</string>
+	<string name="reboot_a">高通9008模式</string>
 </resources>

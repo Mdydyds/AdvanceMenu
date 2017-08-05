@@ -63,6 +63,12 @@ public class MenuActivity extends Activity
 		items.add(getString(R.string.reboot_ms));
 		items.add(getString(R.string.reboot_off));
 		items.add(getString(R.string.help_t));
+		Command cd=new Command("cat /proc/cpuinfo|grep Hardware");
+		String infos=cd.execToGainInfos();
+		if (infos.contains("Qualcomm")||infos.contains("MSM"))
+		{
+			items.add(getString(R.string.reboot_a));
+		}
 		lsmenu.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,items));
 	}
 	private void platform(int type)
@@ -78,7 +84,8 @@ public class MenuActivity extends Activity
 			case 6:RootTool.execRootCmdSilent("setprop ctl.restart zygote"); break;
 			case 7:RootTool.execRootCmdSilent("setprop persist.sys.safemode 1"); break;
 			case 8:RootTool.execRootCmdSilent("input keyevent 26"); break;
-			case 9:Aboot();
+			case 9:Aboot(); break;
+			case 10:RootTool.execRootCmdSilent("reboot edl");
 		}
 	}
 

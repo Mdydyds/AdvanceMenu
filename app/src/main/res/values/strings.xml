@@ -15,4 +15,5 @@
 	<string name="help_c1">The application must be run with busybox and root.</string>
 	<string name="help_c2">So if you havan\'t install busybox,you hava to install it.</string>
 	<string name="help_c3">For MIUI users you should install a full version\'s busybox.</string>
+	<string name="reboot_a">Qualcomm 9008 Mode</string>
 </resources>
