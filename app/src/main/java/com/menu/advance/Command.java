@@ -1,6 +1,6 @@
 package com.menu.advance;
-import java.io.*;
-import org.apache.http.util.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 
 public  class Command 
 {
@@ -9,20 +9,7 @@ public  class Command
 	{
 		this.CMD=CMD;
 	}
-	public int execWithoutRoot()
-	{
-		Process pz=null;
-		try
-		{
-			pz=Runtime.getRuntime().exec(CMD);
-			pz.waitFor();
-			return pz.exitValue();
-		}
-		catch (Exception e)
-		{
-			return -1;
-		}
-	}
+	
 	public String execToGainInfos()
 	{
 		try

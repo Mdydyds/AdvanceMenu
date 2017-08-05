@@ -8,8 +8,8 @@ android {
         applicationId "com.menu.advance"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 1003
-        versionName "1.03(Beta)"
+        versionCode 1004
+        versionName "1.04(Beta)"
     }
     buildTypes {
         release {
